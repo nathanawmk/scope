@@ -52,6 +52,9 @@ resource "google_compute_instance" "tf_test_vm" {
       private_key = "${file("${var.gcp_private_key_path}")}"
     }
   }
+  labels = {
+    yor_trace = "9b8b437b-4e6a-46d2-819c-a3f64346b25a"
+  }
 }
 
 resource "google_compute_firewall" "fw-allow-docker-and-weave" {

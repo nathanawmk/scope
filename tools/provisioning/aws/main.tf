@@ -21,6 +21,9 @@ resource "aws_security_group" "allow_ssh" {
     App       = "${var.app}"
     CreatedBy = "terraform"
   }
+  tags = {
+    yor_trace = "b673328f-172f-41fd-83ea-730e2218d841"
+  }
 }
 
 resource "aws_security_group" "allow_docker" {
@@ -39,6 +42,9 @@ resource "aws_security_group" "allow_docker" {
     Name      = "${var.name}_allow_docker"
     App       = "${var.app}"
     CreatedBy = "terraform"
+  }
+  tags = {
+    yor_trace = "19eaf34f-9e67-4315-9391-bab1168d70a7"
   }
 }
 
@@ -59,6 +65,9 @@ resource "aws_security_group" "allow_weave" {
     App       = "${var.app}"
     CreatedBy = "terraform"
   }
+  tags = {
+    yor_trace = "4f5952fc-07b1-48b8-bd84-ba5af9a98bda"
+  }
 }
 
 resource "aws_security_group" "allow_private_ingress" {
@@ -78,6 +87,9 @@ resource "aws_security_group" "allow_private_ingress" {
     App       = "${var.app}"
     CreatedBy = "terraform"
   }
+  tags = {
+    yor_trace = "ecded6f1-c18b-4efb-bec1-088e51c25924"
+  }
 }
 
 resource "aws_security_group" "allow_all_egress" {
@@ -96,6 +108,9 @@ resource "aws_security_group" "allow_all_egress" {
     Name      = "${var.name}_allow_all_egress"
     App       = "${var.app}"
     CreatedBy = "terraform"
+  }
+  tags = {
+    yor_trace = "a191ec00-64b5-4b1c-bc11-ad996885673e"
   }
 }
 
@@ -133,5 +148,8 @@ resource "aws_instance" "tf_test_vm" {
     Name      = "${var.name}-${count.index}"
     App       = "${var.app}"
     CreatedBy = "terraform"
+  }
+  tags = {
+    yor_trace = "64a30cea-b1d6-4737-8683-cf006d7cb4da"
   }
 }
